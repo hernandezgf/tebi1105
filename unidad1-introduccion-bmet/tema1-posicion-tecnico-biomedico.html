@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tema 1 - Posición del Técnico Biomédico</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#667eea',
+                        'primary-dark': '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .quiz-option {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .quiz-option:hover {
+            transform: translateX(10px);
+        }
+        
+        .correct {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+            color: white !important;
+        }
+        
+        .incorrect {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+            color: white !important;
+        }
+        
+        .section-animate {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen py-8 px-4">
+    
+    <div class="max-w-5xl mx-auto">
+        
+        <!-- Botón Volver -->
+        <a href="index.html" class="inline-flex items-center bg-white text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition mb-6">
+            <i class="fas fa-arrow-left mr-3"></i>
+            Volver a la Unidad 1
+        </a>
+        
+        <!-- Contenedor Principal -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+            
+            <!-- Header -->
+            <div class="text-center mb-10 pb-6 border-b-4 border-primary section-animate">
+                <div class="inline-block bg-gradient-to-r from-purple-600 to-purple-800 text-white px-8 py-4 rounded-2xl mb-4">
+                    <i class="fas fa-user-md text-5xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Tema 1</h1>
+                <h2 class="text-3xl text-primary mb-3">Posición del Técnico Biomédico</h2>
+                <p class="text-xl text-gray-600">DOT 019.261-010 y O*NET 49-9062.00</p>
+                <div class="mt-4 inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-lg">
+                    <i class="fas fa-clock mr-2"></i>
+                    30-40 minutos
+                </div>
+            </div>
+            
+            <!-- Introducción -->
+            <div class="mb-10 section-animate">
+                <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-3 flex items-center">
+                        <i class="fas fa-info-circle mr-3"></i>
+                        ¿Qué Aprenderás?
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        En este tema descubrirás la definición oficial de la profesión de <strong>Técnico Biomédico (BMET)</strong>, 
+                        desde la clasificación tradicional del <strong>Dictionary of Occupational Titles (DOT)</strong> hasta el actual 
+                        sistema <strong>O*NET OnLine</strong> utilizado por el Departamento del Trabajo de los Estados Unidos.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sección 1: DOT (Histórico) -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-history mr-3"></i>
+                    DOT 019.261-010: El Sistema Tradicional
+                </h3>
+                
+                <div class="bg-amber-50 rounded-xl p-6 mb-6 border-l-4 border-amber-600">
+                    <div class="flex items-start">
+                        <div class="bg-amber-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-amber-900 mb-2">¿Qué es el DOT?</h4>
+                            <p class="text-gray-700 mb-3">
+                                El <strong>Dictionary of Occupational Titles (DOT)</strong> fue una publicación del Departamento del Trabajo 
+                                de EE.UU. utilizada desde 1939 hasta finales de los 1990s para clasificar ocupaciones. Aunque está 
+                                <span class="font-bold text-amber-700">obsoleto</span>, es importante conocerlo por su valor histórico.
+                            </p>
+                            <div class="bg-white rounded-lg p-4">
+                                <p class="text-sm font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-code mr-2 text-amber-600"></i>
+                                    Código DOT: <span class="font-mono text-lg">019.261-010</span>
+                                </p>
+                                <p class="text-sm text-gray-600">
+                                    <strong>019:</strong> Categoría Ocupacional<br>
+                                    <strong>261:</strong> Código de trabajo<br>
+                                    <strong>010:</strong> Número de designación
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Responsabilidades según DOT -->
+                <div class="bg-gray-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4 flex items-center">
+                        <i class="fas fa-tasks mr-3 text-purple-600"></i>
+                        Responsabilidades Técnicas (DOT)
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-800">Instalación de Equipos</p>
+                                <p class="text-sm text-gray-600">Colocación y configuración de dispositivos médicos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-800">Calibración</p>
+                                <p class="text-sm text-gray-600">Comparación con estándares para garantizar precisión</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-800">Mantenimiento</p>
+                                <p class="text-sm text-gray-600">Preventivo y correctivo para funcionamiento óptimo</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow-sm">
+                            <i class="fas fa-check-circle text-green-600 text-xl mr-3 mt-1"></i>
+                            <div>
+                                <p class="font-semibold text-gray-800">Reparación</p>
+                                <p class="text-sm text-gray-600">Diagnóstico y solución de fallas técnicas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección 2: O*NET (Actual) -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-globe mr-3"></i>
+                    O*NET 49-9062.00: El Sistema Actual
+                </h3>
+                
+                <div class="bg-green-50 rounded-xl p-6 mb-6 border-l-4 border-green-600">
+                    <div class="flex items-start">
+                        <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center text-xl mr-4 flex-shrink-0">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-xl font-bold text-green-900 mb-2">O*NET OnLine - Sistema Moderno</h4>
+                            <p class="text-gray-700 mb-3">
+                                <strong>O*NET</strong> (Occupational Information Network) es el sistema actual del Departamento del Trabajo 
+                                de EE.UU. que reemplazó al DOT. Es una <strong>base de datos en línea constantemente actualizada</strong> 
+                                que proporciona información detallada sobre ocupaciones en Estados Unidos.
+                            </p>
+                            <div class="bg-white rounded-lg p-4 mb-3">
+                                <p class="font-semibold text-gray-800 mb-2">
+                                    <i class="fas fa-id-badge mr-2 text-green-600"></i>
+                                    Código O*NET: <span class="font-mono text-lg text-green-700">49-9062.00</span>
+                                </p>
+                                <p class="text-lg font-bold text-green-800 mb-2">Medical Equipment Repairers</p>
+                                <p class="text-sm text-gray-700">
+                                    <em>"Test, adjust, or repair biomedical or electromedical equipment."</em>
+                                </p>
+                            </div>
+                            <a href="https://www.onetonline.org/link/summary/49-9062.00" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition">
+                                <i class="fas fa-external-link-alt mr-2"></i>
+                                Visitar O*NET OnLine
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Títulos de Trabajo -->
+                <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-bold text-purple-900 mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-3"></i>
+                        Títulos Comunes del Puesto
+                    </h4>
+                    <div class="grid md:grid-cols-2 gap-3">
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Biomedical Equipment Technician (BMET)</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Biomedical Engineering Technician</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Medical Equipment Service Tech</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Biomedical Electronics Technician</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">Service Technician</span>
+                        </div>
+                        <div class="bg-white p-3 rounded-lg shadow-sm">
+                            <i class="fas fa-tag text-purple-600 mr-2"></i>
+                            <span class="font-semibold">X-ray Service Engineer</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tareas Principales -->
+                <div class="bg-blue-50 rounded-xl p-6 mb-6">
+                    <h4 class="text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-list-check mr-3"></i>
+                        Tareas Principales según O*NET
+                    </h4>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 mb-1">
+                                <i class="fas fa-screwdriver-wrench text-blue-600 mr-2"></i>
+                                Pruebas y Calibración
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Probar o calibrar componentes siguiendo manuales del fabricante usando herramientas manuales, 
+                                eléctricas o dispositivos de medición
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 mb-1">
+                                <i class="fas fa-stethoscope text-blue-600 mr-2"></i>
+                                Mantenimiento Preventivo
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Realizar servicios como limpieza, lubricación o ajuste de equipos
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 mb-1">
+                                <i class="fas fa-magnifying-glass text-blue-600 mr-2"></i>
+                                Inspección y Diagnóstico
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Inspeccionar, probar o resolver problemas de equipos médicos siguiendo especificaciones del fabricante
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 mb-1">
+                                <i class="fas fa-clipboard text-blue-600 mr-2"></i>
+                                Documentación
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Mantener registros de mantenimiento, reparación y actualizaciones requeridas del equipo
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-blue-500">
+                            <p class="font-semibold text-gray-800 mb-1">
+                                <i class="fas fa-graduation-cap text-blue-600 mr-2"></i>
+                                Capacitación
+                            </p>
+                            <p class="text-sm text-gray-600">
+                                Explicar o demostrar la operación correcta o mantenimiento preventivo del equipo médico al personal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Comparación DOT vs O*NET -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-exchange-alt mr-3"></i>
+                    Comparación: DOT vs O*NET
+                </h3>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+                        <thead class="bg-gradient-to-r from-primary to-primary-dark text-white">
+                            <tr>
+                                <th class="p-4 text-left">Característica</th>
+                                <th class="p-4 text-left">DOT (Obsoleto)</th>
+                                <th class="p-4 text-left">O*NET (Actual)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4 font-semibold">Código</td>
+                                <td class="p-4">019.261-010</td>
+                                <td class="p-4 text-green-700 font-semibold">49-9062.00</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4 font-semibold">Estado</td>
+                                <td class="p-4 text-red-600">❌ Obsoleto (1998)</td>
+                                <td class="p-4 text-green-600">✅ Activo y actualizado</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4 font-semibold">Formato</td>
+                                <td class="p-4">Libro impreso</td>
+                                <td class="p-4 text-green-700 font-semibold">Base de datos en línea</td>
+                            </tr>
+                            <tr class="border-b hover:bg-gray-50">
+                                <td class="p-4 font-semibold">Actualizaciones</td>
+                                <td class="p-4">Esporádicas</td>
+                                <td class="p-4 text-green-700 font-semibold">Continuas</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="p-4 font-semibold">Detalle</td>
+                                <td class="p-4">Información básica</td>
+                                <td class="p-4 text-green-700 font-semibold">Información detallada + salarios + proyecciones</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Datos Estadísticos Actuales -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-chart-line mr-3"></i>
+                    Datos del Mercado Laboral (2024)
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-2xl p-6 shadow-xl">
+                        <i class="fas fa-dollar-sign text-4xl mb-3 opacity-80"></i>
+                        <h4 class="text-lg font-semibold mb-2">Salario Mediano</h4>
+                        <p class="text-4xl font-bold mb-1">$62,630</p>
+                        <p class="text-sm opacity-90">por año</p>
+                        <p class="text-2xl font-semibold mt-2">$30.11/hora</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-2xl p-6 shadow-xl">
+                        <i class="fas fa-users text-4xl mb-3 opacity-80"></i>
+                        <h4 class="text-lg font-semibold mb-2">Empleados</h4>
+                        <p class="text-4xl font-bold mb-1">68,000</p>
+                        <p class="text-sm opacity-90">en Estados Unidos</p>
+                        <p class="text-lg mt-2">Crecimiento esperado</p>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-2xl p-6 shadow-xl">
+                        <i class="fas fa-rocket text-4xl mb-3 opacity-80"></i>
+                        <h4 class="text-lg font-semibold mb-2">Proyección 2024-2034</h4>
+                        <p class="text-4xl font-bold mb-1">Mucho más rápido</p>
+                        <p class="text-sm opacity-90">que el promedio (7%+)</p>
+                        <p class="text-2xl font-semibold mt-2">7,300 vacantes/año</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Habilidades y Conocimientos -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-brain mr-3"></i>
+                    Habilidades y Conocimientos Requeridos
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <!-- Habilidades Técnicas -->
+                    <div class="bg-orange-50 rounded-xl p-6 border-l-4 border-orange-500">
+                        <h4 class="text-xl font-bold text-orange-900 mb-4 flex items-center">
+                            <i class="fas fa-tools mr-2"></i>
+                            Habilidades Técnicas
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
+                                <span><strong>Reparación:</strong> Usar herramientas para reparar máquinas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
+                                <span><strong>Mantenimiento de Equipos:</strong> Rutinas preventivas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
+                                <span><strong>Troubleshooting:</strong> Determinar causas de errores</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-orange-600 mr-2 mt-1"></i>
+                                <span><strong>Control de Calidad:</strong> Evaluar funcionamiento</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Conocimientos -->
+                    <div class="bg-cyan-50 rounded-xl p-6 border-l-4 border-cyan-500">
+                        <h4 class="text-xl font-bold text-cyan-900 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb mr-2"></i>
+                            Conocimientos Necesarios
+                        </h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-cyan-600 mr-2 mt-1"></i>
+                                <span><strong>Mecánica:</strong> Máquinas, herramientas y reparación</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-cyan-600 mr-2 mt-1"></i>
+                                <span><strong>Computación y Electrónica:</strong> Circuitos y software</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-cyan-600 mr-2 mt-1"></i>
+                                <span><strong>Servicio al Cliente:</strong> Evaluación de necesidades</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-cyan-600 mr-2 mt-1"></i>
+                                <span><strong>Matemáticas:</strong> Álgebra, geometría y estadística</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Educación y Preparación -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-user-graduate mr-3"></i>
+                    Educación y Preparación
+                </h3>
+                
+                <div class="bg-gradient-to-r from-indigo-50 to-indigo-100 rounded-xl p-6 border-l-4 border-indigo-600">
+                    <h4 class="text-xl font-bold text-indigo-900 mb-4">Job Zone 3: Preparación Media Requerida</h4>
+                    
+                    <div class="grid md:grid-cols-3 gap-4">
+                        <div class="bg-white rounded-lg p-4">
+                            <i class="fas fa-school text-indigo-600 text-3xl mb-3"></i>
+                            <h5 class="font-bold text-gray-800 mb-2">Educación</h5>
+                            <p class="text-sm text-gray-700">
+                                Escuelas vocacionales, experiencia relacionada o <strong>grado asociado (AS)</strong>
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <i class="fas fa-briefcase text-indigo-600 text-3xl mb-3"></i>
+                            <h5 class="font-bold text-gray-800 mb-2">Experiencia</h5>
+                            <p class="text-sm text-gray-700">
+                                Se requiere experiencia laboral previa relacionada con habilidades y conocimientos específicos
+                            </p>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg p-4">
+                            <i class="fas fa-certificate text-indigo-600 text-3xl mb-3"></i>
+                            <h5 class="font-bold text-gray-800 mb-2">Entrenamiento</h5>
+                            <p class="text-sm text-gray-700">
+                                <strong>1-2 años</strong> de capacitación combinando experiencia y formación informal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sección de Preguntas Interactivas -->
+            <div class="mb-12 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-question-circle mr-3"></i>
+                    ¡Pon a Prueba tus Conocimientos!
+                </h3>
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl p-6 mb-6 border-l-4 border-yellow-500">
+                    <p class="text-gray-700 flex items-center">
+                        <i class="fas fa-lightbulb text-yellow-600 text-2xl mr-3"></i>
+                        <span>Responde las siguientes preguntas para verificar tu comprensión del tema. ¡Haz clic en la respuesta que consideres correcta!</span>
+                    </p>
+                </div>
+                
+                <!-- Pregunta 1 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        <span class="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">1</span>
+                        ¿Cuál es el código O*NET actual para Medical Equipment Repairers?
+                    </h4>
+                    <div class="space-y-3" id="quiz1">
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(1, 'a', false)">
+                            <strong>A)</strong> 019.261-010
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(1, 'b', true)">
+                            <strong>B)</strong> 49-9062.00
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(1, 'c', false)">
+                            <strong>C)</strong> 29-2099.00
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(1, 'd', false)">
+                            <strong>D)</strong> 51-9061.00
+                        </div>
+                    </div>
+                    <div id="feedback1" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        <span class="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">2</span>
+                        ¿Qué sistema reemplazó al Dictionary of Occupational Titles (DOT)?
+                    </h4>
+                    <div class="space-y-3" id="quiz2">
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(2, 'a', false)">
+                            <strong>A)</strong> OSHA Standards
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(2, 'b', true)">
+                            <strong>B)</strong> O*NET OnLine
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(2, 'c', false)">
+                            <strong>C)</strong> FDA Guidelines
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(2, 'd', false)">
+                            <strong>D)</strong> AAMI Standards
+                        </div>
+                    </div>
+                    <div id="feedback2" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        <span class="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">3</span>
+                        ¿Cuál es el salario mediano anual de un Medical Equipment Repairer según datos de 2024?
+                    </h4>
+                    <div class="space-y-3" id="quiz3">
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(3, 'a', false)">
+                            <strong>A)</strong> $45,000
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(3, 'b', false)">
+                            <strong>B)</strong> $55,500
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(3, 'c', true)">
+                            <strong>C)</strong> $62,630
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(3, 'd', false)">
+                            <strong>D)</strong> $75,000
+                        </div>
+                    </div>
+                    <div id="feedback3" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        <span class="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">4</span>
+                        Según O*NET, ¿cuál de las siguientes NO es una tarea principal del BMET?
+                    </h4>
+                    <div class="space-y-3" id="quiz4">
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(4, 'a', false)">
+                            <strong>A)</strong> Calibrar equipos siguiendo manuales del fabricante
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(4, 'b', false)">
+                            <strong>B)</strong> Mantener registros de reparación y mantenimiento
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(4, 'c', true)">
+                            <strong>C)</strong> Diagnosticar enfermedades de los pacientes
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(4, 'd', false)">
+                            <strong>D)</strong> Capacitar al personal sobre el uso correcto de equipos
+                        </div>
+                    </div>
+                    <div id="feedback4" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Pregunta 5 -->
+                <div class="bg-white rounded-xl shadow-lg p-6 mb-6">
+                    <h4 class="text-xl font-bold text-gray-800 mb-4">
+                        <span class="bg-primary text-white rounded-full w-8 h-8 inline-flex items-center justify-center mr-2">5</span>
+                        ¿Qué nivel educativo es el más común para esta profesión?
+                    </h4>
+                    <div class="space-y-3" id="quiz5">
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(5, 'a', false)">
+                            <strong>A)</strong> Diploma de High School únicamente
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(5, 'b', true)">
+                            <strong>B)</strong> Grado asociado (AS) o entrenamiento vocacional
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(5, 'c', false)">
+                            <strong>C)</strong> Maestría en Ingeniería
+                        </div>
+                        <div class="quiz-option bg-gray-100 hover:bg-gray-200 p-4 rounded-lg" onclick="checkAnswer(5, 'd', false)">
+                            <strong>D)</strong> Doctorado en Medicina
+                        </div>
+                    </div>
+                    <div id="feedback5" class="mt-4 hidden"></div>
+                </div>
+                
+                <!-- Pregunta Bonus -->
+                <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-xl shadow-lg p-6 border-2 border-purple-400">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-star text-yellow-500 text-3xl mr-3"></i>
+                        <h4 class="text-xl font-bold text-purple-900">
+                            PREGUNTA BONUS: ¿Cuál es la proyección de crecimiento para esta ocupación entre 2024-2034?
+                        </h4>
+                    </div>
+                    <div class="space-y-3" id="quizBonus">
+                        <div class="quiz-option bg-white hover:bg-purple-50 p-4 rounded-lg border-2 border-transparent" onclick="checkAnswer(6, 'a', false)">
+                            <strong>A)</strong> Decrecimiento lento
+                        </div>
+                        <div class="quiz-option bg-white hover:bg-purple-50 p-4 rounded-lg border-2 border-transparent" onclick="checkAnswer(6, 'b', false)">
+                            <strong>B)</strong> Poco o ningún cambio
+                        </div>
+                        <div class="quiz-option bg-white hover:bg-purple-50 p-4 rounded-lg border-2 border-transparent" onclick="checkAnswer(6, 'c', false)">
+                            <strong>C)</strong> Crecimiento promedio (4%-6%)
+                        </div>
+                        <div class="quiz-option bg-white hover:bg-purple-50 p-4 rounded-lg border-2 border-transparent" onclick="checkAnswer(6, 'd', true)">
+                            <strong>D)</strong> Mucho más rápido que el promedio (7% o más)
+                        </div>
+                    </div>
+                    <div id="feedbackBonus" class="mt-4 hidden"></div>
+                </div>
+            </div>
+            
+            <!-- Resumen y Puntos Clave -->
+            <div class="mb-10 section-animate">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-key mr-3"></i>
+                    Puntos Clave para Recordar
+                </h3>
+                
+                <div class="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-xl p-6 border-l-4 border-cyan-500">
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-double text-cyan-600 text-xl mr-3 mt-1"></i>
+                            <span>El <strong>DOT 019.261-010</strong> fue el código histórico, ahora reemplazado por <strong>O*NET 49-9062.00</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-double text-cyan-600 text-xl mr-3 mt-1"></i>
+                            <span>O*NET es una <strong>base de datos en línea constantemente actualizada</strong> con información detallada</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-double text-cyan-600 text-xl mr-3 mt-1"></i>
+                            <span>Las tareas principales incluyen: <strong>calibración, mantenimiento, inspección, reparación y capacitación</strong></span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-double text-cyan-600 text-xl mr-3 mt-1"></i>
+                            <span>Se requiere <strong>grado asociado o entrenamiento vocacional</strong> más 1-2 años de experiencia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-double text-cyan-600 text-xl mr-3 mt-1"></i>
+                            <span>El campo tiene <strong>excelentes perspectivas de crecimiento</strong> (7%+ proyectado 2024-2034)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Navegación -->
+            <div class="flex flex-wrap gap-4 justify-between items-center pt-8 border-t-2 border-gray-200">
+                <a href="index.html" class="bg-gray-600 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-xl transition flex items-center">
+                    <i class="fas fa-arrow-left mr-2"></i>
+                    Volver a la Unidad
+                </a>
+                <a href="tema2-niveles-carrera-bmet.html" class="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-6 py-3 rounded-xl transition flex items-center">
+                    Siguiente: Niveles de Carrera
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Script para las preguntas interactivas -->
+    <script>
+        let answeredQuestions = new Set();
+        
+        function checkAnswer(questionNum, selectedOption, isCorrect) {
+            // Si ya respondió esta pregunta, no hacer nada
+            if (answeredQuestions.has(questionNum)) {
+                return;
+            }
+            
+            answeredQuestions.add(questionNum);
+            
+            const quizId = questionNum === 6 ? 'quizBonus' : `quiz${questionNum}`;
+            const feedbackId = questionNum === 6 ? 'feedbackBonus' : `feedback${questionNum}`;
+            
+            const options = document.querySelectorAll(`#${quizId} .quiz-option`);
+            const feedback = document.getElementById(feedbackId);
+            
+            // Deshabilitar todas las opciones
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                option.style.cursor = 'default';
+            });
+            
+            // Marcar la opción seleccionada
+            const selectedElement = Array.from(options).find(opt => opt.textContent.includes(selectedOption.toUpperCase() + ')'));
+            
+            if (isCorrect) {
+                selectedElement.classList.add('correct');
+                feedback.innerHTML = `
+                    <div class="bg-green-100 border-l-4 border-green-500 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-600 text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-bold text-green-800">¡Correcto! 🎉</p>
+                                <p class="text-green-700 text-sm mt-1">${getExplanation(questionNum)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } else {
+                selectedElement.classList.add('incorrect');
+                // Mostrar la correcta en verde
+                options.forEach(opt => {
+                    if (opt !== selectedElement && !opt.classList.contains('incorrect')) {
+                        const optText = opt.textContent.trim();
+                        const optLetter = optText.charAt(0).toLowerCase();
+                        if (isCorrectOption(questionNum, optLetter)) {
+                            opt.classList.add('correct');
+                        }
+                    }
+                });
+                
+                feedback.innerHTML = `
+                    <div class="bg-red-100 border-l-4 border-red-500 p-4 rounded-lg">
+                        <div class="flex items-center">
+                            <i class="fas fa-times-circle text-red-600 text-2xl mr-3"></i>
+                            <div>
+                                <p class="font-bold text-red-800">Incorrecto 😕</p>
+                                <p class="text-red-700 text-sm mt-1">${getExplanation(questionNum)}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            feedback.classList.remove('hidden');
+            
+            // Scroll suave al feedback
+            setTimeout(() => {
+                feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+        
+        function isCorrectOption(questionNum, option) {
+            const correctAnswers = {
+                1: 'b',
+                2: 'b',
+                3: 'c',
+                4: 'c',
+                5: 'b',
+                6: 'd'
+            };
+            return correctAnswers[questionNum] === option;
+        }
+        
+        function getExplanation(questionNum) {
+            const explanations = {
+                1: 'El código O*NET actual para Medical Equipment Repairers es 49-9062.00. El código 019.261-010 pertenecía al antiguo sistema DOT.',
+                2: 'O*NET OnLine es el sistema que reemplazó al Dictionary of Occupational Titles (DOT) y es mantenido por el Departamento del Trabajo de EE.UU.',
+                3: 'Según datos de 2024, el salario mediano anual es de $62,630, lo que equivale a $30.11 por hora.',
+                4: 'Los técnicos biomédicos NO diagnostican enfermedades - esa es responsabilidad de los médicos. Los BMETs se enfocan en el mantenimiento y reparación de equipos médicos.',
+                5: 'La mayoría de los técnicos biomédicos tienen un grado asociado (AS) o han completado entrenamiento vocacional especializado, junto con 1-2 años de experiencia práctica.',
+                6: 'La proyección de crecimiento para 2024-2034 es "mucho más rápido que el promedio" (7% o más), con aproximadamente 7,300 nuevas vacantes anuales. ¡Excelentes perspectivas laborales! 🚀'
+            };
+            return explanations[questionNum];
+        }
+    </script>
+    
+</body>
+</html>
