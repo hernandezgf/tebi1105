@@ -67,4 +67,384 @@
                     <div>
                         <div class="space-y-3">
                             <!-- Primer Examen Parcial -->
-                            <div class="bg-gradie
+                            <div class="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-5 border-l-4 border-purple-600 hover:shadow-lg transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-purple-900 text-lg">Primer Examen Parcial</h4>
+                                        <p class="text-sm text-purple-700">30 de septiembre, 2025</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold text-purple-600">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Segundo Examen Parcial -->
+                            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-5 border-l-4 border-green-600 hover:shadow-lg transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-green-900 text-lg">Segundo Examen Parcial</h4>
+                                        <p class="text-sm text-green-700">11 de noviembre, 2025</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold text-green-600">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Tercer Examen Parcial -->
+                            <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-5 border-l-4 border-blue-600 hover:shadow-lg transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-blue-900 text-lg">Tercer Examen Parcial</h4>
+                                        <p class="text-sm text-blue-700">9 de diciembre, 2025</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold text-blue-600">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Examen Final -->
+                            <div class="bg-gradient-to-r from-red-50 to-red-100 rounded-xl p-5 border-l-4 border-red-600 hover:shadow-lg transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-red-900 text-lg">Examen Parcial Final</h4>
+                                        <p class="text-sm text-red-700">16 de diciembre, 2025</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold text-red-600">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Trabajos y Asignaciones -->
+                            <div class="bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-xl p-5 border-l-4 border-yellow-600 hover:shadow-lg transition">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h4 class="font-bold text-yellow-900 text-lg">Trabajos / Pruebas / Asignaciones</h4>
+                                        <p class="text-sm text-yellow-700">Durante todo el semestre</p>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-3xl font-bold text-yellow-600">20%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Total -->
+                        <div class="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl p-5 mt-4 text-white">
+                            <div class="flex justify-between items-center">
+                                <h4 class="font-bold text-xl">TOTAL</h4>
+                                <div class="text-4xl font-bold">100%</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gráfico -->
+                    <div class="flex items-center justify-center">
+                        <canvas id="gradeChart" class="max-w-full"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Escala de Calificaciones -->
+            <div class="mb-10">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-graduation-cap mr-3"></i>
+                    Escala de Calificaciones
+                </h3>
+                
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <div class="bg-gradient-to-br from-green-500 to-green-600 text-white rounded-xl p-4 text-center shadow-lg">
+                        <div class="text-4xl font-bold mb-2">A</div>
+                        <div class="text-sm">90 - 100</div>
+                        <div class="text-xs mt-2 opacity-90">Excelente</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-xl p-4 text-center shadow-lg">
+                        <div class="text-4xl font-bold mb-2">B</div>
+                        <div class="text-sm">80 - 89</div>
+                        <div class="text-xs mt-2 opacity-90">Bueno</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-yellow-500 to-yellow-600 text-white rounded-xl p-4 text-center shadow-lg">
+                        <div class="text-4xl font-bold mb-2">C</div>
+                        <div class="text-sm">70 - 79</div>
+                        <div class="text-xs mt-2 opacity-90">Satisfactorio</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-white rounded-xl p-4 text-center shadow-lg">
+                        <div class="text-4xl font-bold mb-2">D</div>
+                        <div class="text-sm">60 - 69</div>
+                        <div class="text-xs mt-2 opacity-90">Deficiente</div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-br from-red-500 to-red-600 text-white rounded-xl p-4 text-center shadow-lg">
+                        <div class="text-4xl font-bold mb-2">F</div>
+                        <div class="text-sm">0 - 59</div>
+                        <div class="text-xs mt-2 opacity-90">Fracaso</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Componentes de Evaluación -->
+            <div class="mb-10">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-tasks mr-3"></i>
+                    Componentes de Evaluación
+                </h3>
+                
+                <div class="space-y-4">
+                    <!-- Exámenes Parciales -->
+                    <div class="bg-purple-50 rounded-xl p-6 border-l-4 border-purple-600">
+                        <h4 class="font-bold text-purple-900 text-xl mb-3 flex items-center">
+                            <i class="fas fa-file-pen mr-3 text-2xl"></i>
+                            Exámenes Parciales (60%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-700 ml-10">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-600 mr-3 mt-1"></i>
+                                <span><strong>Primer Parcial (20%):</strong> Unidades 1, 2 y 3</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-600 mr-3 mt-1"></i>
+                                <span><strong>Segundo Parcial (20%):</strong> Terminología médica, anatomía y fisiología</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-purple-600 mr-3 mt-1"></i>
+                                <span><strong>Tercer Parcial (20%):</strong> Unidades 5 y 6</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Examen Final -->
+                    <div class="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
+                        <h4 class="font-bold text-red-900 text-xl mb-3 flex items-center">
+                            <i class="fas fa-graduation-cap mr-3 text-2xl"></i>
+                            Examen Parcial Final (20%)
+                        </h4>
+                        <p class="text-gray-700 ml-10">
+                            <i class="fas fa-info-circle text-red-600 mr-2"></i>
+                            Evaluación comprensiva de todo el contenido del semestre
+                        </p>
+                    </div>
+                    
+                    <!-- Trabajos y Asignaciones -->
+                    <div class="bg-yellow-50 rounded-xl p-6 border-l-4 border-yellow-600">
+                        <h4 class="font-bold text-yellow-900 text-xl mb-3 flex items-center">
+                            <i class="fas fa-briefcase mr-3 text-2xl"></i>
+                            Trabajos Investigativos / Pruebas Cortas / Asignaciones (20%)
+                        </h4>
+                        <ul class="space-y-2 text-gray-700 ml-10">
+                            <li class="flex items-start">
+                                <i class="fas fa-book text-yellow-600 mr-3 mt-1"></i>
+                                <span><strong>Informe investigativo:</strong> Agencias acreditadoras (Unidad 2)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-book text-yellow-600 mr-3 mt-1"></i>
+                                <span><strong>Trabajo investigativo:</strong> Terminología médica (Unidad 4)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-clipboard-list text-yellow-600 mr-3 mt-1"></i>
+                                <span><strong>Pruebas cortas:</strong> Durante el semestre</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-laptop-code text-yellow-600 mr-3 mt-1"></i>
+                                <span><strong>Asignaciones:</strong> Ejercicios prácticos y tareas</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-users text-yellow-600 mr-3 mt-1"></i>
+                                <span><strong>Participación en laboratorio:</strong> Trabajo en equipo y prácticas</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Notas Importantes -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-3"></i>
+                    Notas Importantes
+                </h3>
+                
+                <div class="bg-blue-50 rounded-xl p-6 border-l-4 border-blue-600 space-y-4">
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-1"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Cambios en el temario:</strong> Los temas están sujetos a cambios en su programación con previo aviso.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-2"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Entrega de trabajos:</strong> Puede entregar trabajos antes de la fecha señalada. Trabajos entregados tarde perderán <span class="font-bold text-red-600">10% de la puntuación por día laborable</span>.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-3"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Formato de trabajos:</strong> Todo trabajo deberá ser entregado con una página de presentación, en papel blanco y sin encuadernar.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-4"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Rúbricas:</strong> Todo trabajo debe seguir los criterios establecidos en su correspondiente rúbrica.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-5"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Profundidad:</strong> Como futuro profesional se espera que usted tenga profundidad al discutir los diversos temas del curso.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-6"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Ausencias justificadas:</strong> Certificaciones médicas, citas judiciales y muertes de familiares cercanos.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-7"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Cálculo de nota final:</strong> La nota final se calcula sumando el total de los porcientos obtenidos.
+                        </p>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4 mt-1">
+                            <i class="fas fa-8"></i>
+                        </div>
+                        <p class="text-gray-700">
+                            <strong>Participación en laboratorio:</strong> Evaluada mediante rúbrica según desempeño en experimentos y trabajo grupal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Políticas Académicas -->
+            <div class="mb-8">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-shield-alt mr-3"></i>
+                    Políticas Académicas
+                </h3>
+                
+                <div class="space-y-4">
+                    <!-- Plagio -->
+                    <div class="bg-red-50 rounded-xl p-6 border-l-4 border-red-600">
+                        <h4 class="font-bold text-red-900 text-xl mb-3 flex items-center">
+                            <i class="fas fa-ban mr-3"></i>
+                            Política de Plagio
+                        </h4>
+                        <p class="text-gray-700 mb-3">
+                            El plagio es <strong class="text-red-600">intolerable</strong> y no denota integridad académica. Todo trabajo plagiado será calificado automáticamente con <strong class="text-red-600">0 puntos (F)</strong> sin derecho a reposición.
+                        </p>
+                        <p class="text-sm text-gray-600">
+                            El profesor se reserva el derecho de referir al estudiante a las oficinas administrativas correspondientes dependiendo de la gravedad o recurrencia del plagio.
+                        </p>
+                    </div>
+                    
+                    <!-- Acomodo Razonable -->
+                    <div class="bg-green-50 rounded-xl p-6 border-l-4 border-green-600">
+                        <h4 class="font-bold text-green-900 text-xl mb-3 flex items-center">
+                            <i class="fas fa-universal-access mr-3"></i>
+                            Acomodo Razonable (ADA)
+                        </h4>
+                        <p class="text-gray-700">
+                            El Instituto reconoce las leyes <strong>ADA</strong> y <strong>Ley 51</strong>. Los estudiantes con impedimentos deben informar voluntariamente al profesor, Trabajador Social o Consejero Académico sobre sus necesidades especiales lo antes posible. Se mantendrá total confidencialidad.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones de Navegación -->
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a href="temario.html" class="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center">
+                    <i class="fas fa-arrow-left mr-3"></i>
+                    Ver Temario
+                </a>
+                <a href="recursos.html" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-emerald-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center">
+                    Ver Recursos
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+    <!-- Script para el gráfico -->
+    <script>
+        const ctx = document.getElementById('gradeChart').getContext('2d');
+        const gradeChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    'Primer Parcial',
+                    'Segundo Parcial',
+                    'Tercer Parcial',
+                    'Examen Final',
+                    'Trabajos/Pruebas'
+                ],
+                datasets: [{
+                    data: [20, 20, 20, 20, 20],
+                    backgroundColor: [
+                        '#9333ea',
+                        '#10b981',
+                        '#3b82f6',
+                        '#ef4444',
+                        '#f59e0b'
+                    ],
+                    borderWidth: 3,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            padding: 15,
+                            font: {
+                                size: 12,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.label + ': ' + context.parsed + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+    
+</body>
+</html>
