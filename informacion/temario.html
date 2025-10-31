@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temario - TEBI1105</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#667eea',
+                        'primary-dark': '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen py-8 px-4">
+    
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Botón Volver -->
+        <a href="../index.html" class="inline-flex items-center bg-white text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition mb-6">
+            <i class="fas fa-arrow-left mr-3"></i>
+            Volver al Inicio
+        </a>
+        
+        <!-- Contenedor Principal -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+            
+            <!-- Header -->
+            <div class="text-center mb-10 pb-6 border-b-4 border-primary">
+                <div class="inline-block bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-2xl mb-4">
+                    <i class="fas fa-list-check text-3xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Temario del Curso</h1>
+                <h2 class="text-2xl text-gray-600">TEBI1105 - Agosto a Diciembre 2025</h2>
+            </div>
+            
+            <!-- Información del Semestre -->
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 mb-8">
+                <div class="grid md:grid-cols-3 gap-4 text-center">
+                    <div>
+                        <i class="fas fa-calendar-alt text-primary text-3xl mb-2"></i>
+                        <p class="font-semibold text-gray-700">Duración</p>
+                        <p class="text-gray-600">Agosto - Diciembre 2025</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-clock text-primary text-3xl mb-2"></i>
+                        <p class="font-semibold text-gray-700">Horas Totales</p>
+                        <p class="text-gray-600">45 horas / semestre</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-book-open text-primary text-3xl mb-2"></i>
+                        <p class="font-semibold text-gray-700">Unidades</p>
+                        <p class="text-gray-600">6 unidades temáticas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 1 -->
+            <div class="mb-8 bg-gradient-to-r from-purple-50 to-purple-100 rounded-2xl p-6 border-l-8 border-purple-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-purple-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-purple-900">Introducción al Técnico Biomédico</h3>
+                        <p class="text-purple-700">26 de agosto - 2 de septiembre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-purple-600 text-xs mr-3"></i>
+                            Posición del Técnico Biomédico (DOT 019.261-010)
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Descripción según el Departamento del Trabajo Federal</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-purple-600 text-xs mr-3"></i>
+                            Niveles de Carrera BMET
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• BMET I, II, III</li>
+                            <li>• BMET Supervisor</li>
+                            <li>• Laboratory Equipment Specialist (LES)</li>
+                            <li>• Radiology Equipment Specialist (RES)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-purple-600 text-xs mr-3"></i>
+                            Características Ideales del BMET
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Práctico, Lógico, Organizado</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-purple-600 text-xs mr-3"></i>
+                            Conceptos Fundamentales
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Reparación, Calibración, Mantenimiento (Regular y Preventivo)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 2 -->
+            <div class="mb-8 bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-6 border-l-8 border-green-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-green-900">Empleabilidad, Organización y Agencias</h3>
+                        <p class="text-green-700">9 de septiembre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-green-600 text-xs mr-3"></i>
+                            Perspectivas de Empleabilidad
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Instalaciones médico-hospitalarias</li>
+                            <li>• Compañías de servicio</li>
+                            <li>• Autoempleo</li>
+                            <li>• Representante de venta</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-green-600 text-xs mr-3"></i>
+                            Estructura Administrativa
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Organigrama hospitalario y Departamento de Tecnología Biomédica</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-green-600 text-xs mr-3"></i>
+                            Agencias Acreditadoras y Reguladoras
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• JCAHO (Joint Commission)</li>
+                            <li>• OSHA (Seguridad Ocupacional)</li>
+                            <li>• IEEE (Estándares Eléctricos)</li>
+                            <li>• NIST (Estándares y Tecnología)</li>
+                            <li>• AAMI (Instrumentación Médica)</li>
+                            <li>• FDA (Administración de Alimentos y Medicamentos)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 3 -->
+            <div class="mb-8 bg-gradient-to-r from-blue-50 to-blue-100 rounded-2xl p-6 border-l-8 border-blue-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-blue-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-blue-900">Descripción de Equipos Médicos</h3>
+                        <p class="text-blue-700">16 de septiembre - 23 de septiembre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-blue-600 text-xs mr-3"></i>
+                            Tipos de Equipos Médicos
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Diagnóstico</li>
+                            <li>• Terapéutico</li>
+                            <li>• Misceláneo</li>
+                            <li>• Tecnologías emergentes: Nanotecnología, Robótica, Computación</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-blue-600 text-xs mr-3"></i>
+                            Equipos de Diagnóstico
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Electrocardiógrafo (ECG), Electroencefalógrafo (EEG), Medidores de presión</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-blue-600 text-xs mr-3"></i>
+                            Equipos de Imaginería Médica
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Rayos X (Convencional, CT scan, Fluoroscopía)</li>
+                            <li>• Ultrasonido</li>
+                            <li>• Medicina Nuclear</li>
+                            <li>• Resonancia Magnética (MRI)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-blue-600 text-xs mr-3"></i>
+                            Equipos Terapéuticos y Quirúrgicos
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Ventiladores</li>
+                            <li>• Desfibriladores y Marcapasos</li>
+                            <li>• TENS (Estimulación Nerviosa Transcutánea)</li>
+                            <li>• Electrocauterio (ESU)</li>
+                            <li>• LASER</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-blue-600 text-xs mr-3"></i>
+                            Equipos de Laboratorio
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Analizadores (gases sanguíneos, químicos), Autoclaves, Medidores de pH, Centrífugas</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Primer Examen Parcial -->
+            <div class="mb-8 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-6 border-l-8 border-red-600">
+                <div class="flex items-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mr-4">
+                        <i class="fas fa-file-pen"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-red-900">Primer Examen Parcial</h3>
+                        <p class="text-red-700">30 de septiembre, 2025</p>
+                        <p class="text-sm text-red-600 mt-1">Unidades 1, 2 y 3 + Entrega de informe investigativo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 4 -->
+            <div class="mb-8 bg-gradient-to-r from-yellow-50 to-yellow-100 rounded-2xl p-6 border-l-8 border-yellow-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-yellow-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-900">Terminología Médica y Anatomía</h3>
+                        <p class="text-yellow-700">7 de octubre - 14 de octubre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-yellow-600 text-xs mr-3"></i>
+                            Especialidades y Subespecialidades Médicas
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Principales especialidades y profesiones relacionadas</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-yellow-600 text-xs mr-3"></i>
+                            Términos Médicos
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Raíces médicas</li>
+                            <li>• Formación de términos</li>
+                            <li>• Prefijos y Sufijos</li>
+                            <li>• Trabajo investigativo de terminología</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-yellow-600 text-xs mr-3"></i>
+                            Anatomía y Fisiología
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Definiciones de Anatomía y Fisiología</li>
+                            <li>• Sistema de referencias anatómicas (planos, regiones, direcciones)</li>
+                            <li>• Niveles de organización (molecular, células, tejidos, órganos, sistemas)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 5 -->
+            <div class="mb-8 bg-gradient-to-r from-pink-50 to-pink-100 rounded-2xl p-6 border-l-8 border-pink-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-pink-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        5
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-pink-900">Instrumentación en Tecnología Biomédica</h3>
+                        <p class="text-pink-700">21 de octubre - 18 de noviembre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-pink-600 text-xs mr-3"></i>
+                            Definiciones Técnicas
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Instrumento, Equipo Médico, Equipo de Laboratorio</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-pink-600 text-xs mr-3"></i>
+                            Tecnología Electrónica
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Sistemas de control</li>
+                            <li>• Procesamiento de señales (análogas y digitales)</li>
+                            <li>• Amplificación y filtros</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-pink-600 text-xs mr-3"></i>
+                            Señales Biológicas
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Definición y características. Origen: Bioelectricidad, Radiación, Química, Presión, Temperatura, Flujo</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-pink-600 text-xs mr-3"></i>
+                            Usos de Equipos
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Tratamiento, Diagnóstico, Medición, Life Support</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Segundo Examen Parcial -->
+            <div class="mb-8 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-6 border-l-8 border-red-600">
+                <div class="flex items-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mr-4">
+                        <i class="fas fa-file-pen"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-red-900">Segundo Examen Parcial</h3>
+                        <p class="text-red-700">11 de noviembre, 2025</p>
+                        <p class="text-sm text-red-600 mt-1">Terminología médica e introducción a anatomía y fisiología</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Unidad 6 -->
+            <div class="mb-8 bg-gradient-to-r from-cyan-50 to-cyan-100 rounded-2xl p-6 border-l-8 border-cyan-600">
+                <div class="flex items-center mb-4">
+                    <div class="bg-cyan-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl font-bold mr-4">
+                        6
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-cyan-900">Descripción Técnica de Equipos Biomédicos</h3>
+                        <p class="text-cyan-700">25 de noviembre - 2 de diciembre, 2025</p>
+                    </div>
+                </div>
+                
+                <div class="ml-20 space-y-3">
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-cyan-600 text-xs mr-3"></i>
+                            Transducción
+                        </h4>
+                        <p class="text-sm text-gray-600 ml-6">Definición, tipos de transductores e importancia en mediciones</p>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-cyan-600 text-xs mr-3"></i>
+                            Cadena de Instrumentación
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Detección de señal</li>
+                            <li>• Transductores y Biosensores</li>
+                            <li>• Amplificadores y Filtros</li>
+                            <li>• Conversión A/D y D/A</li>
+                            <li>• Sistemas de registro y almacenaje</li>
+                            <li>• Sistemas computarizados y redes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded-xl shadow-sm">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center">
+                            <i class="fas fa-circle text-cyan-600 text-xs mr-3"></i>
+                            Propiedades de Señales Biomédicas
+                        </h4>
+                        <ul class="text-sm text-gray-600 ml-6 space-y-1">
+                            <li>• Análisis de gráficas</li>
+                            <li>• Señales periódicas (amplitud, periodo, frecuencia)</li>
+                            <li>• Señales no-periódicas (ondas complejas)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tercer Examen Parcial -->
+            <div class="mb-8 bg-gradient-to-r from-red-50 to-red-100 rounded-2xl p-6 border-l-8 border-red-600">
+                <div class="flex items-center">
+                    <div class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mr-4">
+                        <i class="fas fa-file-pen"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-red-900">Tercer Examen Parcial</h3>
+                        <p class="text-red-700">9 de diciembre, 2025</p>
+                        <p class="text-sm text-red-600 mt-1">Unidades 5 y 6</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Examen Final -->
+            <div class="mb-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded-2xl p-6 border-l-8 border-purple-800">
+                <div class="flex items-center">
+                    <div class="bg-purple-800 text-white rounded-full w-16 h-16 flex items-center justify-center text-2xl mr-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-purple-900">Examen Parcial Final</h3>
+                        <p class="text-purple-700">16 de diciembre, 2025</p>
+                        <p class="text-sm text-purple-600 mt-1">Contenido de todo el semestre</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Botones de Navegación -->
+            <div class="mt-10 flex flex-wrap gap-4 justify-center">
+                <a href="descripcion.html" class="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center">
+                    <i class="fas fa-arrow-left mr-3"></i>
+                    Ver Descripción
+                </a>
+                <a href="evaluacion.html" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-emerald-600 hover:to-green-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition flex items-center">
+                    Criterios de Evaluación
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
