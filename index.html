@@ -4,503 +4,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEBI1105 - Introducción a la Tecnología Biomédica</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Configuración personalizada de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#667eea',
+                        'primary-dark': '#764ba2',
+                        'success': '#11998e',
+                        'info': '#4facfe',
+                        'warning': '#fa709a',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
-        :root {
-            --primary: #667eea;
-            --primary-dark: #764ba2;
-            --success: #11998e;
-            --info: #4facfe;
-            --warning: #fa709a;
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
         
-        body {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            min-height: 100vh;
-            padding: 20px;
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .hero {
-            background: white;
-            border-radius: 25px;
-            padding: 60px;
-            margin: 50px auto;
-            max-width: 1400px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-        
-        .course-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid #e9ecef;
-        }
-        
-        .course-code {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-        
-        .course-title {
-            color: #333;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-        
-        .professor-info {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 20px 30px;
-            border-radius: 15px;
-            display: inline-block;
-        }
-        
-        .info-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 40px 0;
-        }
-        
-        .info-card {
-            background: white;
-            border: 2px solid #e9ecef;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .info-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
-        }
-        
-        .info-card i {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .info-card h4 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        
-        .info-card a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
+        .card-hover:hover {
+            transform: translateY(-8px);
         }
         
         .unit-card {
-            border: none;
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-            background: white;
-        }
-        
-        .unit-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
-        }
-        
-        .unit-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .unit-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            margin-right: 25px;
-            color: white;
-        }
-        
-        .unit-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .unit-2 { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
-        .unit-3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        .unit-4 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
-        .unit-5 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
-        .unit-6 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-        
-        .unit-title {
-            flex: 1;
-        }
-        
-        .unit-title h3 {
-            color: #333;
-            margin: 0 0 5px 0;
-            font-size: 1.5rem;
-        }
-        
-        .unit-title p {
-            color: #6c757d;
-            margin: 0;
-        }
-        
-        .topics-list {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0 0 0;
-        }
-        
-        .topic-link {
-            display: block;
-            padding: 15px 20px;
-            margin: 10px 0;
-            background: #f8f9fa;
-            border-radius: 10px;
-            text-decoration: none;
-            color: #333;
             transition: all 0.3s ease;
             border-left: 4px solid transparent;
         }
         
-        .topic-link:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateX(10px);
-            border-left-color: var(--primary-dark);
+        .unit-card:hover {
+            border-left-color: #667eea;
+            background: linear-gradient(to right, rgba(102, 126, 234, 0.05), transparent);
         }
         
-        .topic-link i {
-            margin-right: 10px;
-        }
-        
-        .btn-view-all {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            display: inline-block;
+        .topic-link {
             transition: all 0.3s ease;
-            margin-top: 15px;
         }
         
-        .btn-view-all:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-            color: white;
-        }
-        
-        .section-title {
-            font-size: 2rem;
-            color: #333;
-            margin: 50px 0 30px 0;
-            padding-bottom: 15px;
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 30px 20px;
-            }
-            
-            .course-code {
-                font-size: 2rem;
-            }
-            
-            .course-title {
-                font-size: 1.5rem;
-            }
-            
-            .unit-header {
-                flex-direction: column;
-                text-align: center;
-            }
-            
-            .unit-icon {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
+        .topic-link:hover {
+            transform: translateX(10px);
         }
     </style>
 </head>
-<body>
-    <div class="hero">
-        <!-- Header del Curso -->
-        <div class="course-header">
-            <h1 class="course-code">TEBI1105</h1>
-            <h2 class="course-title">Introducción a la Tecnología Biomédica</h2>
-            <div class="professor-info">
-                <p class="mb-2"><i class="bi bi-person-circle me-2"></i><strong>Profesor:</strong> Felipe Hernández Gerena</p>
-                <p class="mb-2"><i class="bi bi-envelope me-2"></i><strong>Email:</strong> hernandezgf@itec.pr</p>
-                <p class="mb-2"><i class="bi bi-calendar-event me-2"></i><strong>Horario:</strong> Viernes 10:00am - 1:00pm y 2:00pm - 3:30pm</p>
-                <p class="mb-0"><i class="bi bi-building me-2"></i><strong>Institución:</strong> Instituto Tecnológico de Puerto Rico - Recinto de San Juan</p>
-            </div>
-        </div>
+<body class="gradient-bg min-h-screen py-5 px-4">
+    
+    <!-- Container Principal -->
+    <div class="max-w-7xl mx-auto">
         
-        <!-- Tarjetas de Información -->
-        <div class="info-cards">
-            <div class="info-card" onclick="window.location.href='informacion/descripcion.html'">
-                <i class="bi bi-file-text"></i>
-                <h4>Descripción</h4>
-                <a href="informacion/descripcion.html">Ver detalles del curso</a>
-            </div>
+        <!-- Hero Section -->
+        <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-12 animate-fade-in">
             
-            <div class="info-card" onclick="window.location.href='informacion/temario.html'">
-                <i class="bi bi-list-check"></i>
-                <h4>Temario</h4>
-                <a href="informacion/temario.html">Ver temario completo</a>
-            </div>
-            
-            <div class="info-card" onclick="window.location.href='informacion/evaluacion.html'">
-                <i class="bi bi-clipboard-check"></i>
-                <h4>Evaluación</h4>
-                <a href="informacion/evaluacion.html">Criterios de evaluación</a>
-            </div>
-            
-            <div class="info-card" onclick="window.location.href='informacion/recursos.html'">
-                <i class="bi bi-book"></i>
-                <h4>Recursos</h4>
-                <a href="informacion/recursos.html">Bibliografía y enlaces</a>
-            </div>
-        </div>
-        
-        <!-- Unidades del Curso -->
-        <h2 class="section-title"><i class="bi bi-journal-bookmark-fill me-3"></i>Unidades del Curso</h2>
-        
-        <!-- Unidad 1 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-1">
-                    <i class="bi bi-person-badge"></i>
-                </div>
-                <div class="unit-title">
-                    <h3>Unidad 1: Introducción al Técnico Biomédico</h3>
-                    <p>Rol, funciones y niveles de carrera del BMET</p>
+            <!-- Header del Curso -->
+            <div class="text-center mb-12 pb-8 border-b-4 border-primary">
+                <h1 class="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent mb-4 animate-slide-up">
+                    TEBI1105
+                </h1>
+                <h2 class="text-2xl md:text-3xl text-gray-700 mb-6 font-semibold">
+                    Introducción a la Tecnología Biomédica
+                </h2>
+                
+                <!-- Info del Profesor -->
+                <div class="inline-block bg-gradient-to-r from-gray-100 to-gray-200 px-6 py-4 rounded-2xl shadow-lg">
+                    <p class="flex items-center justify-center mb-2 text-gray-800">
+                        <i class="fas fa-user-circle mr-3 text-primary text-xl"></i>
+                        <span><strong>Profesor:</strong> Felipe Hernández Gerena</span>
+                    </p>
+                    <p class="flex items-center justify-center mb-2 text-gray-800">
+                        <i class="fas fa-envelope mr-3 text-primary text-xl"></i>
+                        <a href="mailto:hernandezgf@itec.pr" class="hover:text-primary transition">hernandezgf@itec.pr</a>
+                    </p>
+                    <p class="flex items-center justify-center mb-2 text-gray-800">
+                        <i class="fas fa-calendar-alt mr-3 text-primary text-xl"></i>
+                        <span>Viernes 10:00am - 1:00pm y 2:00pm - 3:30pm</span>
+                    </p>
+                    <p class="flex items-center justify-center text-gray-800">
+                        <i class="fas fa-building mr-3 text-primary text-xl"></i>
+                        <span>Instituto Tecnológico de Puerto Rico - San Juan</span>
+                    </p>
                 </div>
             </div>
             
-            <div class="topics-list">
-                <a href="unidad1-introduccion-bmet/tema1-posicion-tecnico-biomedico.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Posición del Técnico Biomédico (DOT 019.261-010)
+            <!-- Tarjetas de Información -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <!-- Descripción -->
+                <a href="informacion/descripcion.html" class="card-hover bg-white border-2 border-gray-200 hover:border-primary rounded-2xl p-6 text-center shadow-lg cursor-pointer group">
+                    <i class="fas fa-file-alt text-6xl mb-4 bg-gradient-to-r from-primary to-primary-dark bg-clip-text text-transparent group-hover:animate-float"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Descripción</h4>
+                    <p class="text-primary font-medium">Ver detalles del curso</p>
                 </a>
-                <a href="unidad1-introduccion-bmet/tema2-niveles-carrera-bmet.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Niveles de Carrera BMET (I, II, III, Supervisor, Especialistas)
+                
+                <!-- Temario -->
+                <a href="informacion/temario.html" class="card-hover bg-white border-2 border-gray-200 hover:border-success rounded-2xl p-6 text-center shadow-lg cursor-pointer group">
+                    <i class="fas fa-list-check text-6xl mb-4 bg-gradient-to-r from-success to-green-600 bg-clip-text text-transparent group-hover:animate-float"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Temario</h4>
+                    <p class="text-success font-medium">Ver temario completo</p>
                 </a>
-                <a href="unidad1-introduccion-bmet/tema3-caracteristicas-bmet.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Características Ideales del Técnico Biomédico
+                
+                <!-- Evaluación -->
+                <a href="informacion/evaluacion.html" class="card-hover bg-white border-2 border-gray-200 hover:border-warning rounded-2xl p-6 text-center shadow-lg cursor-pointer group">
+                    <i class="fas fa-clipboard-check text-6xl mb-4 bg-gradient-to-r from-warning to-red-600 bg-clip-text text-transparent group-hover:animate-float"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Evaluación</h4>
+                    <p class="text-warning font-medium">Criterios de evaluación</p>
                 </a>
-                <a href="unidad1-introduccion-bmet/tema4-conceptos-fundamentales.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 4: Conceptos: Reparación, Calibración y Mantenimiento
+                
+                <!-- Recursos -->
+                <a href="informacion/recursos.html" class="card-hover bg-white border-2 border-gray-200 hover:border-info rounded-2xl p-6 text-center shadow-lg cursor-pointer group">
+                    <i class="fas fa-book text-6xl mb-4 bg-gradient-to-r from-info to-blue-600 bg-clip-text text-transparent group-hover:animate-float"></i>
+                    <h4 class="text-xl font-bold mb-2 text-gray-800">Recursos</h4>
+                    <p class="text-info font-medium">Bibliografía y enlaces</p>
                 </a>
             </div>
             
-            <a href="unidad1-introduccion-bmet/index.html" class="btn-view-all">
-                Ver toda la Unidad 1 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Unidad 2 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-2">
-                    <i class="bi bi-building"></i>
+            <!-- Sección de Unidades -->
+            <div class="mt-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-8 pb-4 border-b-4 border-primary flex items-center">
+                    <i class="fas fa-book-open mr-4 text-primary"></i>
+                    Unidades del Curso
+                </h2>
+                
+                <!-- Unidad 1 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-primary to-primary-dark text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 1: Introducción al Técnico Biomédico</h3>
+                            <p class="text-gray-600">Rol, funciones y niveles de carrera del BMET</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad1-introduccion-bmet/tema1-posicion-tecnico-biomedico.html" class="topic-link flex items-center bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Posición del Técnico Biomédico (DOT 019.261-010)</span>
+                        </a>
+                        <a href="unidad1-introduccion-bmet/tema2-niveles-carrera-bmet.html" class="topic-link flex items-center bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Niveles de Carrera BMET (I, II, III, Supervisor, Especialistas)</span>
+                        </a>
+                        <a href="unidad1-introduccion-bmet/tema3-caracteristicas-bmet.html" class="topic-link flex items-center bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Características Ideales del Técnico Biomédico</span>
+                        </a>
+                        <a href="unidad1-introduccion-bmet/tema4-conceptos-fundamentales.html" class="topic-link flex items-center bg-gray-50 hover:bg-primary hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 4: Conceptos: Reparación, Calibración y Mantenimiento</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad1-introduccion-bmet/index.html" class="inline-block mt-4 bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 1 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
-                <div class="unit-title">
-                    <h3>Unidad 2: Empleabilidad, Organización y Agencias</h3>
-                    <p>Estructura administrativa y organismos reguladores</p>
+                
+                <!-- Unidad 2 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-success to-green-600 text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 2: Empleabilidad, Organización y Agencias</h3>
+                            <p class="text-gray-600">Estructura administrativa y organismos reguladores</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad2-empleabilidad-organizacion/tema1-perspectivas-empleabilidad.html" class="topic-link flex items-center bg-gray-50 hover:bg-success hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Perspectivas de Empleabilidad</span>
+                        </a>
+                        <a href="unidad2-empleabilidad-organizacion/tema2-estructura-administrativa.html" class="topic-link flex items-center bg-gray-50 hover:bg-success hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Estructura Administrativa Hospitalaria</span>
+                        </a>
+                        <a href="unidad2-empleabilidad-organizacion/tema3-agencias-reguladoras.html" class="topic-link flex items-center bg-gray-50 hover:bg-success hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Agencias Acreditadoras (JCAHO, OSHA, FDA, AAMI)</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad2-empleabilidad-organizacion/index.html" class="inline-block mt-4 bg-gradient-to-r from-success to-green-600 hover:from-green-600 hover:to-success text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 2 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Unidad 3 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-info to-blue-600 text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 3: Descripción de Equipos Médicos</h3>
+                            <p class="text-gray-600">Equipos de diagnóstico, terapéuticos y de laboratorio</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad3-equipos-medicos/tema1-tipos-equipos-medicos.html" class="topic-link flex items-center bg-gray-50 hover:bg-info hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Tipos de Equipos Médicos y Tecnologías Emergentes</span>
+                        </a>
+                        <a href="unidad3-equipos-medicos/tema2-equipos-diagnostico.html" class="topic-link flex items-center bg-gray-50 hover:bg-info hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Equipos de Diagnóstico (ECG, EEG, Monitores)</span>
+                        </a>
+                        <a href="unidad3-equipos-medicos/tema3-equipos-imagineria.html" class="topic-link flex items-center bg-gray-50 hover:bg-info hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Equipos de Imaginería (Rayos X, CT, MRI, Ultrasonido)</span>
+                        </a>
+                        <a href="unidad3-equipos-medicos/tema4-equipos-terapeuticos.html" class="topic-link flex items-center bg-gray-50 hover:bg-info hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 4: Equipos Terapéuticos (Ventiladores, Desfibriladores, TENS)</span>
+                        </a>
+                        <a href="unidad3-equipos-medicos/tema5-equipos-laboratorio.html" class="topic-link flex items-center bg-gray-50 hover:bg-info hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 5: Equipos de Laboratorio (Analizadores, Autoclaves, Centrífugas)</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad3-equipos-medicos/index.html" class="inline-block mt-4 bg-gradient-to-r from-info to-blue-600 hover:from-blue-600 hover:to-info text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 3 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Unidad 4 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-warning to-red-600 text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-heart-pulse"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 4: Terminología Médica y Anatomía</h3>
+                            <p class="text-gray-600">Vocabulario técnico y fundamentos de anatomía</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad4-terminologia-anatomia/tema1-especialidades-medicas.html" class="topic-link flex items-center bg-gray-50 hover:bg-warning hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Especialidades y Subespecialidades Médicas</span>
+                        </a>
+                        <a href="unidad4-terminologia-anatomia/tema2-terminologia-medica.html" class="topic-link flex items-center bg-gray-50 hover:bg-warning hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Terminología Médica (Raíces, Prefijos, Sufijos)</span>
+                        </a>
+                        <a href="unidad4-terminologia-anatomia/tema3-anatomia-fisiologia.html" class="topic-link flex items-center bg-gray-50 hover:bg-warning hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Introducción a Anatomía y Fisiología</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad4-terminologia-anatomia/index.html" class="inline-block mt-4 bg-gradient-to-r from-warning to-red-600 hover:from-red-600 hover:to-warning text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 4 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Unidad 5 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-purple-600 to-pink-600 text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 5: Instrumentación en Tecnología Biomédica</h3>
+                            <p class="text-gray-600">Sistemas electrónicos y señales biológicas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad5-instrumentacion/tema1-definiciones-tecnicas.html" class="topic-link flex items-center bg-gray-50 hover:bg-purple-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Definiciones Técnicas (Instrumento, Equipo Médico, Laboratorio)</span>
+                        </a>
+                        <a href="unidad5-instrumentacion/tema2-tecnologia-electronica.html" class="topic-link flex items-center bg-gray-50 hover:bg-purple-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Rol de la Tecnología Electrónica</span>
+                        </a>
+                        <a href="unidad5-instrumentacion/tema3-senales-biologicas.html" class="topic-link flex items-center bg-gray-50 hover:bg-purple-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Señales Biológicas y sus Características</span>
+                        </a>
+                        <a href="unidad5-instrumentacion/tema4-usos-equipos.html" class="topic-link flex items-center bg-gray-50 hover:bg-purple-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 4: Usos de Equipos (Tratamiento, Diagnóstico, Medición)</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad5-instrumentacion/index.html" class="inline-block mt-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-pink-600 hover:to-purple-600 text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 5 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <!-- Unidad 6 -->
+                <div class="unit-card bg-white rounded-2xl shadow-lg p-6 mb-6 border-l-4">
+                    <div class="flex flex-col md:flex-row items-start md:items-center mb-4">
+                        <div class="bg-gradient-to-br from-cyan-600 to-blue-700 text-white rounded-2xl w-20 h-20 flex items-center justify-center text-3xl mb-4 md:mb-0 md:mr-6 flex-shrink-0">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-2">Unidad 6: Descripción Técnica de Equipos</h3>
+                            <p class="text-gray-600">Transductores, cadena de instrumentación y análisis de señales</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 ml-0 md:ml-26">
+                        <a href="unidad6-descripcion-tecnica/tema1-transductores.html" class="topic-link flex items-center bg-gray-50 hover:bg-cyan-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 1: Transducción y Tipos de Transductores</span>
+                        </a>
+                        <a href="unidad6-descripcion-tecnica/tema2-cadena-instrumentacion.html" class="topic-link flex items-center bg-gray-50 hover:bg-cyan-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 2: Cadena de Instrumentación (Biosensores, Amplificadores, Filtros)</span>
+                        </a>
+                        <a href="unidad6-descripcion-tecnica/tema3-propiedades-senales.html" class="topic-link flex items-center bg-gray-50 hover:bg-cyan-600 hover:text-white p-4 rounded-xl transition">
+                            <i class="fas fa-play-circle mr-3 text-xl"></i>
+                            <span>Tema 3: Propiedades de Señales Biomédicas (Periódicas y No-periódicas)</span>
+                        </a>
+                    </div>
+                    
+                    <a href="unidad6-descripcion-tecnica/index.html" class="inline-block mt-4 bg-gradient-to-r from-cyan-600 to-blue-700 hover:from-blue-700 hover:to-cyan-600 text-white font-semibold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-xl">
+                        Ver toda la Unidad 6 <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
             
-            <div class="topics-list">
-                <a href="unidad2-empleabilidad-organizacion/tema1-perspectivas-empleabilidad.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Perspectivas de Empleabilidad
-                </a>
-                <a href="unidad2-empleabilidad-organizacion/tema2-estructura-administrativa.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Estructura Administrativa Hospitalaria
-                </a>
-                <a href="unidad2-empleabilidad-organizacion/tema3-agencias-reguladoras.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Agencias Acreditadoras (JCAHO, OSHA, FDA, AAMI)
-                </a>
+            <!-- Footer -->
+            <div class="text-center mt-12 pt-8 border-t-2 border-gray-200">
+                <p class="text-gray-600 flex items-center justify-center mb-2">
+                    <i class="fas fa-calendar-days mr-3 text-primary"></i>
+                    Semestre: Agosto - Diciembre 2025 | 3 Créditos
+                </p>
+                <p class="text-sm text-gray-500">
+                    Instituto Tecnológico de Puerto Rico © 2025
+                </p>
             </div>
-            
-            <a href="unidad2-empleabilidad-organizacion/index.html" class="btn-view-all">
-                Ver toda la Unidad 2 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Unidad 3 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-3">
-                    <i class="bi bi-hospital"></i>
-                </div>
-                <div class="unit-title">
-                    <h3>Unidad 3: Descripción de Equipos Médicos</h3>
-                    <p>Equipos de diagnóstico, terapéuticos y de laboratorio</p>
-                </div>
-            </div>
-            
-            <div class="topics-list">
-                <a href="unidad3-equipos-medicos/tema1-tipos-equipos-medicos.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Tipos de Equipos Médicos y Tecnologías Emergentes
-                </a>
-                <a href="unidad3-equipos-medicos/tema2-equipos-diagnostico.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Equipos de Diagnóstico (ECG, EEG, Monitores)
-                </a>
-                <a href="unidad3-equipos-medicos/tema3-equipos-imagineria.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Equipos de Imaginería (Rayos X, CT, MRI, Ultrasonido)
-                </a>
-                <a href="unidad3-equipos-medicos/tema4-equipos-terapeuticos.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 4: Equipos Terapéuticos (Ventiladores, Desfibriladores, TENS)
-                </a>
-                <a href="unidad3-equipos-medicos/tema5-equipos-laboratorio.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 5: Equipos de Laboratorio (Analizadores, Autoclaves, Centrífugas)
-                </a>
-            </div>
-            
-            <a href="unidad3-equipos-medicos/index.html" class="btn-view-all">
-                Ver toda la Unidad 3 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Unidad 4 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-4">
-                    <i class="bi bi-heart-pulse"></i>
-                </div>
-                <div class="unit-title">
-                    <h3>Unidad 4: Terminología Médica y Anatomía</h3>
-                    <p>Vocabulario técnico y fundamentos de anatomía</p>
-                </div>
-            </div>
-            
-            <div class="topics-list">
-                <a href="unidad4-terminologia-anatomia/tema1-especialidades-medicas.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Especialidades y Subespecialidades Médicas
-                </a>
-                <a href="unidad4-terminologia-anatomia/tema2-terminologia-medica.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Terminología Médica (Raíces, Prefijos, Sufijos)
-                </a>
-                <a href="unidad4-terminologia-anatomia/tema3-anatomia-fisiologia.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Introducción a Anatomía y Fisiología
-                </a>
-            </div>
-            
-            <a href="unidad4-terminologia-anatomia/index.html" class="btn-view-all">
-                Ver toda la Unidad 4 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Unidad 5 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-5">
-                    <i class="bi bi-cpu"></i>
-                </div>
-                <div class="unit-title">
-                    <h3>Unidad 5: Instrumentación en Tecnología Biomédica</h3>
-                    <p>Sistemas electrónicos y señales biológicas</p>
-                </div>
-            </div>
-            
-            <div class="topics-list">
-                <a href="unidad5-instrumentacion/tema1-definiciones-tecnicas.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Definiciones Técnicas (Instrumento, Equipo Médico, Laboratorio)
-                </a>
-                <a href="unidad5-instrumentacion/tema2-tecnologia-electronica.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Rol de la Tecnología Electrónica
-                </a>
-                <a href="unidad5-instrumentacion/tema3-senales-biologicas.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Señales Biológicas y sus Características
-                </a>
-                <a href="unidad5-instrumentacion/tema4-usos-equipos.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 4: Usos de Equipos (Tratamiento, Diagnóstico, Medición)
-                </a>
-            </div>
-            
-            <a href="unidad5-instrumentacion/index.html" class="btn-view-all">
-                Ver toda la Unidad 5 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Unidad 6 -->
-        <div class="unit-card">
-            <div class="unit-header">
-                <div class="unit-icon unit-6">
-                    <i class="bi bi-activity"></i>
-                </div>
-                <div class="unit-title">
-                    <h3>Unidad 6: Descripción Técnica de Equipos</h3>
-                    <p>Transductores, cadena de instrumentación y análisis de señales</p>
-                </div>
-            </div>
-            
-            <div class="topics-list">
-                <a href="unidad6-descripcion-tecnica/tema1-transductores.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 1: Transducción y Tipos de Transductores
-                </a>
-                <a href="unidad6-descripcion-tecnica/tema2-cadena-instrumentacion.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 2: Cadena de Instrumentación (Biosensores, Amplificadores, Filtros)
-                </a>
-                <a href="unidad6-descripcion-tecnica/tema3-propiedades-senales.html" class="topic-link">
-                    <i class="bi bi-play-circle-fill"></i>
-                    Tema 3: Propiedades de Señales Biomédicas (Periódicas y No-periódicas)
-                </a>
-            </div>
-            
-            <a href="unidad6-descripcion-tecnica/index.html" class="btn-view-all">
-                Ver toda la Unidad 6 <i class="bi bi-arrow-right ms-2"></i>
-            </a>
-        </div>
-        
-        <!-- Footer -->
-        <div class="text-center mt-5 pt-4" style="border-top: 2px solid #e9ecef;">
-            <p class="text-muted">
-                <i class="bi bi-calendar3 me-2"></i>
-                Semestre: Agosto - Diciembre 2025 | 3 Créditos
-            </p>
-            <p class="text-muted small">
-                Instituto Tecnológico de Puerto Rico © 2025
-            </p>
         </div>
     </div>
     
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
