@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluación - TEBI1105</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js para gráficos -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#667eea',
+                        'primary-dark': '#764ba2',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen py-8 px-4">
+    
+    <div class="max-w-5xl mx-auto">
+        
+        <!-- Botón Volver -->
+        <a href="../index.html" class="inline-flex items-center bg-white text-primary hover:bg-primary hover:text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition mb-6">
+            <i class="fas fa-arrow-left mr-3"></i>
+            Volver al Inicio
+        </a>
+        
+        <!-- Contenedor Principal -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12">
+            
+            <!-- Header -->
+            <div class="text-center mb-10 pb-6 border-b-4 border-primary">
+                <div class="inline-block bg-gradient-to-r from-primary to-primary-dark text-white px-6 py-3 rounded-2xl mb-4">
+                    <i class="fas fa-clipboard-check text-3xl"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2">Criterios de Evaluación</h1>
+                <h2 class="text-2xl text-gray-600">TEBI1105 - Sistema de Calificaciones</h2>
+            </div>
+            
+            <!-- Distribución de Puntos -->
+            <div class="mb-10">
+                <h3 class="text-3xl font-bold text-primary mb-6 flex items-center">
+                    <i class="fas fa-chart-pie mr-3"></i>
+                    Distribución de Puntos
+                </h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                    <!-- Tabla de Evaluación -->
+                    <div>
+                        <div class="space-y-3">
+                            <!-- Primer Examen Parcial -->
+                            <div class="bg-gradie
